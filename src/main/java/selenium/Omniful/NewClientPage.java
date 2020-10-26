@@ -10,20 +10,23 @@ public class NewClientPage extends PageBases {
 		// TODO Auto-generated constructor stub
 	}
 
-		@FindBy(name="workspaceName")
+		@FindBy(id="workspaceName")
 		WebElement WorkspaceName;
 		
-		@FindBy(name="email")
+		@FindBy(id="email")
 		WebElement Email;
 		
-		@FindBy(name="companyName")
+		@FindBy(id="companyName")
 		WebElement CompanyName;
 		
-		@FindBy(name="phoneNumber")
+		@FindBy(id="phoneNumber")
 		WebElement PhoneNumber;
 		
 		@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[2]/div/div/div[2]/button")
 		WebElement Savebtn;
+		
+		@FindBy(xpath="//*[@id=\"root\"]/div/div[2]/div")
+		WebElement Cnfmessg;
 		
 		public void CreateClientMethod(String wsn,String ee, String cn, String pn) {
 			WorkspaceName.sendKeys(wsn);
@@ -31,6 +34,10 @@ public class NewClientPage extends PageBases {
 			CompanyName.sendKeys(cn);
 			PhoneNumber.sendKeys(pn);
 			Savebtn.click();
+		}
+		public String getMessage()
+		{
+		return Cnfmessg.getText();
 		}
 		
 

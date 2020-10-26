@@ -1,5 +1,7 @@
 package selenium.Omniful;
 
+import static org.testng.Assert.assertEquals;
+
 //import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.BeforeTest;
@@ -13,7 +15,7 @@ public class ClientTest extends SuperAdminLoginTest{
 			subobj.superadminlogin("mostafa@omniful.com", "12345678");
 			driver.manage().window().maximize();
 			Thread.sleep(10000);
-			//assertEquals(subobj.getMessage(), "You're Home.\r\n");
+			assertEquals(subobj.getMessage(), "You're Home.");
 	}
 	@BeforeTest
 	public void OpenSide() throws InterruptedException {
