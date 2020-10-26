@@ -2,8 +2,6 @@ package selenium.Omniful;
 
 import org.testng.annotations.Test;
 
-//import static org.testng.Assert.assertEquals;
-
 import org.testng.annotations.BeforeTest;
 
 
@@ -15,11 +13,14 @@ public class SuperAdminLoginTest extends TestBases {
 		
 	}
 	
-	@Test
+	@Test(priority =1)
 	public void testSuperAdminLogin() {
 		 SuperAdminLoginPage subobj=new SuperAdminLoginPage(driver);
 		subobj.superadminlogin("mostafa@omniful.com", "12345678");
-		//assertEquals(subobj.getMessage(), "You're Home.\r\n");
 	}
-		
+	@Test(priority =2)
+	public void TestMenu() {
+	HomePage hp=new HomePage(driver);
+	hp.OpenClientPage();
+	}	
 }

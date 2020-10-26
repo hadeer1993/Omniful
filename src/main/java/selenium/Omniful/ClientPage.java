@@ -10,19 +10,12 @@ public class ClientPage extends PageBases {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	@FindBy(xpath="//*[@id=\"navbar-mobile\"]/div/div/ul/li/a/svg")
-	WebElement SideMenu;
 	
-	@FindBy(className="menu-text")
-	WebElement Client;
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div/div/header/div/div/button")
+	WebElement NewClientbtn;
 	
-	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div/div/header/div/div/button/span")
-	WebElement NewClient;
-	
-	public void OpenClientPage(){
-		//SideMenu.click();
-		Client.click();
-		NewClient.click();
+	public void CreateClient(){
+		NewClientbtn.click();
 	}
 	
 }
