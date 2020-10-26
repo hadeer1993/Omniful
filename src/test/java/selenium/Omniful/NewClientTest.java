@@ -16,7 +16,7 @@ public class NewClientTest extends ClientTest {
 	@Test
 	public void SaveClient() {
 		NewClientPage ncp=new NewClientPage(driver);
-		ncp.CreateClientMethod("automation","test@testtt.com","auto","1111111");
+		ncp.CreateClientMethod("automationn","test@testttt.com","auto","1111111");
 		assertEquals(ncp.getMessage(), "Client Created");
 	}
 
