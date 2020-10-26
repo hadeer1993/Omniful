@@ -1,29 +1,30 @@
 package selenium.Omniful;
 
-import static org.testng.Assert.assertEquals;
-
-//import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class ClientTest extends SuperAdminLoginTest{
+public class ClientTest extends TestBases{
 	
 	@BeforeTest
-	public void LoginAsSuperAdmin() throws InterruptedException {
-		 SuperAdminLoginPage subobj=new SuperAdminLoginPage(driver);
-			subobj.superadminlogin("mostafa@omniful.com", "12345678");
-			driver.manage().window().maximize();
-			Thread.sleep(10000);
-			assertEquals(subobj.getMessage(), "You're Home.");
+	public void openbrowser(){
+		OpenChrome("https://admin-stage-omniful.ibtikar.sa/");
 	}
-	@BeforeTest
-	public void OpenSide() throws InterruptedException {
-		HomePage hp=new HomePage(driver);
-		hp.OpenClientPage();
+	@Test(priority=1)
+	     public void LoginAsSuperAdmin() throws InterruptedException{
+		SuperAdminLoginPage subobj=new SuperAdminLoginPage(driver);
+		subobj.superadminlogin("mostafa@omniful.com", "12345678");
+		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
-	@Test
+	@Test(priority=2)
+	     public void OpenSideMenu() throws InterruptedException{
+	 		HomePage hp=new HomePage(driver);
+	 		hp.OpenClientPage();
+	 		Thread.sleep(10000);
+	 	}
+	
+	@Test(priority=3)
 	public void TestClient() {
 		ClientPage cp=new ClientPage(driver);
 		cp.CreateClient();

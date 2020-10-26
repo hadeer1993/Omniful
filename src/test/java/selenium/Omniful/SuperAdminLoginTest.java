@@ -12,15 +12,9 @@ public class SuperAdminLoginTest extends TestBases {
 		OpenChrome("https://admin-stage-omniful.ibtikar.sa/");
 		
 	}
-	
-	@Test(priority =1)
-	public void testSuperAdminLogin() {
+	@Test
+	public void testSuperAdminLogin() throws InterruptedException {
 		 SuperAdminLoginPage subobj=new SuperAdminLoginPage(driver);
 		subobj.superadminlogin("mostafa@omniful.com", "12345678");
 	}
-	@Test(priority =2)
-	public void TestMenu() {
-	HomePage hp=new HomePage(driver);
-	hp.OpenClientPage();
-	}	
 }
