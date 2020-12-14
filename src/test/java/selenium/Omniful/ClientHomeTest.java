@@ -32,4 +32,13 @@ public class ClientHomeTest extends TestBases {
 	Thread.sleep(10000);
 	
 	}	
+	
+	@Test(priority=4)
+	public void OpenEcommerce() throws InterruptedException {
+		ClientHomePage chp=new ClientHomePage(driver);
+		chp.OpenEcomPage();
+		driver.manage().window().maximize();
+		Thread.sleep(10000);
+	}
+
 }

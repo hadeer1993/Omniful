@@ -2,10 +2,22 @@ package selenium.Omniful;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import TestData.ExcelDataReader;
+
 public class NewClientTest extends TestBases {
+	@DataProvider(name="data")
+	public Object[][]getTestData() throws IOException, InterruptedException{
+	ExcelDataReader obj=new ExcelDataReader();
+	return obj.getExcelData();
+
+	}
+	
 	@BeforeTest
 	public void openbrowser(){
 		OpenChrome("https://admin-stage-omniful.ibtikar.sa/");
@@ -30,15 +42,13 @@ public class NewClientTest extends TestBases {
 	cp.CreateClient();
 	Thread.sleep(10000);
 }
-    @Test(priority=4)
-	public void SaveClient() {
+    @Test(priority=4, dataProvider="data")
+	public void SaveClient(String wsn,String ee, String cn, String pn) throws InterruptedException {
 		NewClientPage ncp=new NewClientPage(driver);
-		ncp.CreateClientMethod("automationnnn","test@testttttt.com","auto","1111111");
+		ncp.CreateClientMethod(wsn,ee,cn,pn);
+		Thread.sleep(50000);
 		assertEquals(ncp.getMessage(), "Client Created");
+		driver.navigate().to("https://admin-stage-omniful.ibtikar.sa/clients/create-client");
 	}
-
-	
-	
-	
 
 }

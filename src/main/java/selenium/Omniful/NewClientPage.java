@@ -26,8 +26,8 @@ public class NewClientPage extends PageBases {
 		WebElement Savebtn;
 		
 		@FindBy(xpath="//*[@id=\"root\"]/div/div[2]/div")
-		WebElement Cnfmessg;
-		
+		WebElement Cnfmessg;	
+	
 		public void CreateClientMethod(String wsn,String ee, String cn, String pn) {
 			WorkspaceName.sendKeys(wsn);
 			Email.sendKeys(ee);

@@ -19,6 +19,12 @@ public class ClientHomePage extends PageBases {
 	@FindBy(xpath="//*[@id=\"navbar-mobile\"]/ul/li[2]/div/a[3]")
 	WebElement ChangeTimeZone;
 	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[4]/a/div[1]")
+	WebElement Settings;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[4]/ul/li[1]/a/div")
+	WebElement Ecommerce;
+	
 	public void OpenRolesPage() {
 		Roles.click();
 	}
@@ -26,5 +32,11 @@ public class ClientHomePage extends PageBases {
 		AdminMenu.click();
 		ChangeTimeZone.click();
 	}
+	
+	public void OpenEcomPage() {
+		Settings.click();
+		Ecommerce.click();
+	}
+
 
 }
