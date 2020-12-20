@@ -27,5 +27,7 @@ public class EcoomerceListTest extends TestBases {
 		chp.OpenEcomPage();
 		driver.manage().window().maximize();
 		Thread.sleep(10000);
+		EcoomerceListPage ecolist=new EcoomerceListPage(driver);
+		ecolist.SetupMagento();
     }   
 }
