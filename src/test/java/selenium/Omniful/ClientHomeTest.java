@@ -40,5 +40,13 @@ public class ClientHomeTest extends TestBases {
 		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
+	
+	@Test(priority=5)
+	public void OpenLanguage() throws InterruptedException {
+		ClientHomePage chp=new ClientHomePage(driver);
+		chp.OpenLangPage();
+		driver.manage().window().maximize();
+		Thread.sleep(10000);
+	}
 
 }
