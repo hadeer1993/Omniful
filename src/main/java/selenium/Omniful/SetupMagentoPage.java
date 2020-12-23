@@ -25,7 +25,7 @@ public class SetupMagentoPage extends PageBases {
 	@FindBy(xpath="//*[@id=\"root\"]/div/div[2]/div")
 	WebElement Cnfmessg;
 	
-	public void Integrate(String shop,String user, String pass) {
+	public void MagentoMethod(String shop,String user, String pass) {
 		ShopURL.sendKeys(shop);
 		UserName.sendKeys(user);
 		PassWord.sendKeys(pass);
