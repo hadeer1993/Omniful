@@ -32,7 +32,7 @@ public class CreateRoleTest extends TestBases {
 	@Test(priority = 4)
 	public void AddRole() throws InterruptedException {
 		CreateRolePage crp = new CreateRolePage(driver);
-		crp.AddRoleMethod("role123");
+		crp.AddRoleMethod("role1234");
 		Thread.sleep(10000);
 	}
 

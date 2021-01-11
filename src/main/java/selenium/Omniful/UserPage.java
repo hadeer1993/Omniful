@@ -4,31 +4,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RolePage extends PageBases {
+public class UserPage extends PageBases{
 
-	public RolePage(WebDriver driver) {
+	public UserPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-
+ 
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[1]/div/button")
 	WebElement AddBtn;
 	
-	@FindBy(xpath = "//*[@id=\"cell-1xjgFPCpn--1\"]/div/span[2]/svg")
-	WebElement DeleteBtn;
-	
-	@FindBy(xpath = "//*[@id=\"cell-aNia8foMDl-2\"]/div/span[1]/svg")
+	@FindBy(xpath = "//*[@id=\"cell-yY3Zkvhu9Y-2\"]/div/span[1]/svg")
 	WebElement EditBtn;
 	
-	public void AddRole() {
+	@FindBy(xpath = "//*[@id=\"cell-yY3Zkvhu9Y-2\"]/div/span[2]/svg")
+	WebElement DeleteBtn;
+	
+	public void AddUser() {
 		AddBtn.click();
-	}	
-	public void DeleteRole1() {
-		DeleteBtn.click();
 	}
-		
-	public void EditRole() {
+	public void EditUser() {
 		EditBtn.click();
 	}
-	
+	public void DeleteUser() {
+		DeleteBtn.click();
+	}
 }

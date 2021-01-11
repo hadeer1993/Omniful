@@ -27,6 +27,9 @@ public class ClientHomePage extends PageBases {
 	
 	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[5]/ul/li[2]/a/div")
 	WebElement CatlogLang;
+	
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[2]/a/div")
+	WebElement Users;
 
 	public void OpenRolesPage() {
 		Roles.click();
@@ -46,5 +49,8 @@ public class ClientHomePage extends PageBases {
 		CatlogLang.click();
 	}
 
+	public void OpenUsersPage() {
+		Users.click();
+	}
 
 }
