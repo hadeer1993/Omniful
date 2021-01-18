@@ -9,7 +9,7 @@ public class HomeTest extends TestBases {
 	public void openbrowser() {
 		OpenChrome("https://admin-stage-omniful.ibtikar.sa/");
 	}
-	@Test(priority=2)
+	@Test(priority=1)
 	public void LoginClient() throws InterruptedException{
 		 SuperAdminLoginPage subobj=new SuperAdminLoginPage(driver);
 			subobj.superadminlogin("mostafa@omniful.com", "12345678");

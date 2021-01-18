@@ -10,7 +10,7 @@ public class HubsPage extends PageBases {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	@FindBy(xpath="//*[@id=\"add-user\"]/button")
+	@FindBy(xpath="//*[@id=\"add-user\"]/a/button")
 	WebElement AddNew;
 	
 	public void ClickAddNew() {

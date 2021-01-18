@@ -48,5 +48,13 @@ public class ClientHomeTest extends TestBases {
 		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
+	
+	@Test(priority=6)
+	public void OpenHubs() throws InterruptedException {
+		ClientHomePage chp=new ClientHomePage(driver);
+		chp.OpenHubsPage();
+		driver.manage().window().maximize();
+		Thread.sleep(10000);
+		}
 
 }

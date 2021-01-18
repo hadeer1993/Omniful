@@ -24,8 +24,8 @@ public class SetupMagentoTest extends TestBases {
 }
     @Test(priority=2)
     public void OpenSideMenu() throws InterruptedException{
-		HomePage hp=new HomePage(driver);
-		hp.OpenClientPage();
+    	ClientHomePage chp=new ClientHomePage(driver);
+		chp.OpenEcomPage();
 		Thread.sleep(10000);
 }
     @Test(priority=3)
