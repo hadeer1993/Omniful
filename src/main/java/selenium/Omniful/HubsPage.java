@@ -16,17 +16,19 @@ public class HubsPage extends PageBases {
 	public void ClickAddNew() {
 		AddNew.click();
 	}
+	
+	@FindBy(xpath="//*[@id=\"card-12\"]/div")
+	WebElement Card;
 
-	@FindBy(xpath = "//*[@id=\"card-13\"]/div/div/div[5]/div/li/a/span/svg")
+	@FindBy(xpath = "//*[@id=\"card-12\"]/div/div/div[5]/div/li/a/span/svg")
 	WebElement GearBtn;
 	
-	public void ClickGearButton() {
-		GearBtn.click();
-	}
-	@FindBy(xpath = "//*[@id=\"card-13\"]/div/div/div[5]/div/li/a/span/svg/path")
+	@FindBy(xpath = "//*[@id=\"card-12\"]/div/div/div[5]/div/li/div/button[1]")
 	WebElement LocationBtn;
 	
 	public void ClickLocation() {
+		//Card.click();
+		GearBtn.click();
 		LocationBtn.click();
 	}
 }

@@ -20,6 +20,10 @@ public class HubTest extends TestBases {
 		HubsPage hub=new HubsPage(driver);
 		hub.ClickAddNew();
 	}
-	
+	@Test(priority=2)
+	public void LocationMethod() {
+	HubsPage hub=new HubsPage(driver);
+	hub.ClickLocation();
+	}
 
 }

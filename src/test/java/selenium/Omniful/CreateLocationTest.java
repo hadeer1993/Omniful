@@ -2,6 +2,7 @@ package selenium.Omniful;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -27,7 +28,7 @@ public class CreateLocationTest extends TestBases{
 	public void Login() throws InterruptedException {
 		ClientLoginPage clp = new ClientLoginPage(driver);
 		clp.clientLoginMethod("asmaa0abdelkerim@gmail.com", "123456");
-		Thread.sleep(10000);
+		Thread.sleep(20000);
     }
 	
 	@Test(priority = 2)
@@ -35,15 +36,18 @@ public class CreateLocationTest extends TestBases{
 		ClientHomePage chp = new ClientHomePage(driver);
 		chp.OpenHubsPage();
 		Thread.sleep(10000);
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(5000);
+		
 	}
 	
 	@Test(priority = 3)
 	public void OpenLocationPage() throws InterruptedException {
 		HubsPage hp = new HubsPage(driver);
-		hp.ClickGearButton();
-		Thread.sleep(10000);
 		hp.ClickLocation();
 		Thread.sleep(10000);
+		
 	}
 	
 	@Test(priority = 4)
