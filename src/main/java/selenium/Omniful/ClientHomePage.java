@@ -30,6 +30,9 @@ public class ClientHomePage extends PageBases {
 	
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[2]/a/div")
 	WebElement Users;
+	
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[6]/a/div")
+	WebElement Hubs;
 
 	public void OpenRolesPage() {
 		Roles.click();
@@ -53,4 +56,7 @@ public class ClientHomePage extends PageBases {
 		Users.click();
 	}
 
+	public void OpenHubsPage() {
+		Hubs.click();
+	}
 }
