@@ -1,5 +1,7 @@
 package selenium.Omniful;
 
+import static org.testng.Assert.assertEquals;
+
 //import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
@@ -15,7 +17,7 @@ public class NewClientTest extends TestBases {
 	public Object[][] callExcelData() throws IOException
 	{
 		ExcelDataReader dataObj = new ExcelDataReader();
-		return dataObj.ReadDataFromExcel(0, 4);
+		return dataObj.ReadDataFromExcel(0, 5);
 	}
 	
 	@BeforeTest
@@ -43,11 +45,11 @@ public class NewClientTest extends TestBases {
 	Thread.sleep(10000);
 }
     @Test(priority=4, dataProvider="dataSheet0")
-	public void SaveClient(String wsn,String ee, String cn, String pn) throws InterruptedException {
+	public void SaveClient(String wsn,String ee, String cn, String pn, String Validationmsg) throws InterruptedException {
 		NewClientPage ncp=new NewClientPage(driver);
 		ncp.CreateClientMethod(wsn,ee,cn,pn);
 		Thread.sleep(50000);
-		//assertEquals(ncp.getMessage(), "Client Created");
+		assertEquals(ncp.getMessage(), Validationmsg);
 		driver.navigate().to("https://admin-stage-omniful.ibtikar.sa/clients/create-client");
 	}
 

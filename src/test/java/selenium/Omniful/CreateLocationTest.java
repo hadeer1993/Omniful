@@ -39,11 +39,6 @@ public class CreateLocationTest extends TestBases{
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		Thread.sleep(5000);
-		
-	}
-	
-	@Test(priority = 3)
-	public void OpenLocationPage() throws InterruptedException {
 		HubsPage hp = new HubsPage(driver);
 		hp.ClickLocation();
 		Thread.sleep(10000);

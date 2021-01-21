@@ -20,14 +20,14 @@ public class HubsPage extends PageBases {
 	@FindBy(xpath="//*[@id=\"card-12\"]/div")
 	WebElement Card;
 
-	@FindBy(xpath = "//*[@id=\"card-12\"]/div/div/div[5]/div/li/a/span/svg")
+	@FindBy(xpath = "//*[@id=\"card-12\"]/div/div/div[5]/div/li")
 	WebElement GearBtn;
 	
-	@FindBy(xpath = "//*[@id=\"card-12\"]/div/div/div[5]/div/li/div/button[1]")
+	@FindBy(xpath = "//*[@id=\"card-12\"]/div/div/div[5]/div/li/div/a[1]/button")
 	WebElement LocationBtn;
 	
-	public void ClickLocation() {
-		//Card.click();
+	public void ClickLocation() throws InterruptedException {
+		Card.click();
 		GearBtn.click();
 		LocationBtn.click();
 	}

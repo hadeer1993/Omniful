@@ -21,7 +21,7 @@ public class HubTest extends TestBases {
 		hub.ClickAddNew();
 	}
 	@Test(priority=2)
-	public void LocationMethod() {
+	public void LocationMethod() throws InterruptedException {
 	HubsPage hub=new HubsPage(driver);
 	hub.ClickLocation();
 	}

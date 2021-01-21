@@ -1,5 +1,7 @@
 package selenium.Omniful;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,6 +35,18 @@ public class ClientHomePage extends PageBases {
 	
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[6]/a/div")
 	WebElement Hubs;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[7]/a/div[1]")
+	WebElement Inventory;
+
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/div[2]")
+	WebElement Scroll;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]")
+	WebElement SideMenu;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[7]/ul/li[8]/a/div")
+	WebElement Importing;
 
 	public void OpenRolesPage() {
 		Roles.click();
@@ -58,5 +72,12 @@ public class ClientHomePage extends PageBases {
 
 	public void OpenHubsPage() {
 		Hubs.click();
+	}
+	
+	public void OpenImporting() throws InterruptedException {
+		Inventory.click();
+		WebElement scroll = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/div[2]/div"));
+		scroll.sendKeys(Keys.PAGE_DOWN);
+		Importing.click();
 	}
 }

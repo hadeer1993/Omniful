@@ -20,7 +20,6 @@ public class ClientHomeTest extends TestBases {
 	public void OpenRoles() throws InterruptedException {
 		ClientHomePage chp=new ClientHomePage(driver);
 		chp.OpenRolesPage();
-		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
 	
@@ -28,7 +27,6 @@ public class ClientHomeTest extends TestBases {
 	public void OpenTimeZone() throws InterruptedException {
 	ClientHomePage chp=new ClientHomePage(driver);
 	chp.OpenAdminMenu();
-	driver.manage().window().maximize();
 	Thread.sleep(10000);
 	
 	}	
@@ -37,7 +35,6 @@ public class ClientHomeTest extends TestBases {
 	public void OpenEcommerce() throws InterruptedException {
 		ClientHomePage chp=new ClientHomePage(driver);
 		chp.OpenEcomPage();
-		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
 	
@@ -45,7 +42,6 @@ public class ClientHomeTest extends TestBases {
 	public void OpenLanguage() throws InterruptedException {
 		ClientHomePage chp=new ClientHomePage(driver);
 		chp.OpenLangPage();
-		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
 	
@@ -53,8 +49,15 @@ public class ClientHomeTest extends TestBases {
 	public void OpenHubs() throws InterruptedException {
 		ClientHomePage chp=new ClientHomePage(driver);
 		chp.OpenHubsPage();
-		driver.manage().window().maximize();
 		Thread.sleep(10000);
 		}
+	
+	@Test(priority=7)
+	public void OpenImportingScreen() throws InterruptedException {
+		ClientHomePage chp=new ClientHomePage(driver);
+		chp.OpenImporting();
+		Thread.sleep(10000);
+		}
+
 
 }

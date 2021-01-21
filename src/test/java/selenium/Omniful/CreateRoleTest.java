@@ -7,14 +7,14 @@ public class CreateRoleTest extends TestBases {
 
 	@BeforeTest
 	public void Openbrowser() throws InterruptedException {
-		OpenChrome("https://demo3.dashboard-omniful-stage.ibtikar.sa/pages/login");
+		OpenChrome("https://asmak.dashboard-omniful-stage.ibtikar.sa/");
 		driver.manage().window().maximize();
 		Thread.sleep(10000);
 	}
 	@Test(priority=1)
 	public void LoginCLient() throws InterruptedException {
 		ClientLoginPage clp = new ClientLoginPage(driver);
-		clp.clientLoginMethod("hadeera00.1@gmail.com", "123456");
+		clp.clientLoginMethod("asmaa0abdelkerim@gmail.com", "123456");
 		Thread.sleep(10000);
 	}
 	@Test(priority = 2)
