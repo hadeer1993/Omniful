@@ -11,14 +11,20 @@ public class RolePage extends PageBases {
 		// TODO Auto-generated constructor stub
 	}
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[1]/div/button")
+	@FindBy(xpath = "//button[contains(@class,'add-new-btn btn')]")
 	WebElement AddBtn;
 	
-	@FindBy(xpath = "//*[@id=\"cell-1xjgFPCpn--1\"]/div/span[2]/svg")
+	@FindBy(xpath = "//span[@title='delete']")
 	WebElement DeleteBtn;
 	
-	@FindBy(xpath = "//*[@id=\"cell-aNia8foMDl-2\"]/div/span[1]/svg")
+	@FindBy(xpath = "//span[@title='Edit']")
 	WebElement EditBtn;
+	
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]")
+	WebElement DeleteCnfmsg;
+	
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div")
+	WebElement CreateCnfmsg;
 	
 	public void AddRole() {
 		AddBtn.click();
@@ -31,4 +37,12 @@ public class RolePage extends PageBases {
 		EditBtn.click();
 	}
 	
+	public String GetDeleteConfirmationMsg() {
+  
+		return DeleteCnfmsg.getText();
+	}
+	
+	public String GetCreateCnfMsg() {
+		return CreateCnfmsg.getText();
+	}
 }

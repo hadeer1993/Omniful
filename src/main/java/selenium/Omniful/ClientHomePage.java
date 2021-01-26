@@ -47,6 +47,9 @@ public class ClientHomePage extends PageBases {
 	
 	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[7]/ul/li[8]/a/div")
 	WebElement Importing;
+	
+	@FindBy(xpath = "//a[@href='/inventory/move-inventory']")
+	WebElement Moving;
 
 	public void OpenRolesPage() {
 		Roles.click();
@@ -79,5 +82,10 @@ public class ClientHomePage extends PageBases {
 		WebElement scroll = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/div[2]/div"));
 		scroll.sendKeys(Keys.PAGE_DOWN);
 		Importing.click();
+	}
+	
+	public void OpenMovePage() {
+		Inventory.click();
+		Moving.click();
 	}
 }

@@ -10,18 +10,22 @@ public class CreateLocationPage extends PageBases{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/form/div/div/div[2]/div[3]/div/div/button[1]")
-	WebElement CreateLocationbtn;
 	
-	@FindBy(xpath = "//*[@id=\"hubLocation\"]")
+	@FindBy(id = "hubLocation")
 	WebElement Locationtxt;
+	
+	@FindBy(xpath = "//input[@name='locationType']")
+	WebElement LocationType;
+	
+	@FindBy(xpath = "//button[contains(@class,'mr-2 btn')]")
+	WebElement CreateLocationbtn;
 	
 	@FindBy(xpath = "/div/div[1]")
 	WebElement Cnfmessage;
 
 	public void CreateLocation(String name) {
 		Locationtxt.sendKeys(name);
+		LocationType.click();
 		CreateLocationbtn.click();
 	}
 	

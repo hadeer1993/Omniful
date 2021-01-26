@@ -1,5 +1,7 @@
 package selenium.Omniful;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +16,7 @@ public class CreateLocationTest extends TestBases{
 	public Object[][] callExcelData() throws IOException
 	{
 		ExcelDataReader dataObj = new ExcelDataReader();
-		return dataObj.ReadDataFromExcel(3, 1);
+		return dataObj.ReadDataFromExcel(3, 2);
 	}
 	
 	@BeforeTest
@@ -41,15 +43,17 @@ public class CreateLocationTest extends TestBases{
 		Thread.sleep(5000);
 		HubsPage hp = new HubsPage(driver);
 		hp.ClickLocation();
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 		
 	}
 	
-	@Test(priority = 4)
-	public void CreateLocation(String name) throws InterruptedException {
+	@Test(priority = 3, dataProvider="dataSheet3")
+	public void CreateLocation(String name, String Validationmsg) throws InterruptedException {
 		CreateLocationPage clp = new CreateLocationPage(driver);
 		clp.CreateLocation(name);
 		Thread.sleep(50000);
-		driver.navigate().to("https://asmak.dashboard-omniful-stage.ibtikar.sa/hubs/locations/13/Demo");
+		assertEquals(clp.getMessage(), Validationmsg);
+		
+		driver.navigate().to("https://asmak.dashboard-omniful-stage.ibtikar.sa/hubs/locations/12/salams");
 	}
 }

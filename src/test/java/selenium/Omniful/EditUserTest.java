@@ -1,7 +1,12 @@
 package selenium.Omniful;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -14,7 +19,7 @@ public class EditUserTest extends TestBases {
 	public Object[][] callExcelData() throws IOException
 	{
 		ExcelDataReader dataObj = new ExcelDataReader();
-		return dataObj.ReadDataFromExcel(4, 3);
+		return dataObj.ReadDataFromExcel(4, 4);
 	}
 	
 	@BeforeTest
@@ -27,7 +32,7 @@ public class EditUserTest extends TestBases {
 	@Test(priority = 1)
 	public void Login() throws InterruptedException {
 		ClientLoginPage clp = new ClientLoginPage(driver);
-		clp.clientLoginMethod("asmaa0abd.elkerim@gmail.com", "123456");
+		clp.clientLoginMethod("asmaa0abdelkerim@gmail.com", "123456");
 		Thread.sleep(10000);
 }
 
@@ -36,6 +41,13 @@ public class EditUserTest extends TestBases {
 		ClientHomePage chp = new ClientHomePage(driver);
 		chp.OpenUsersPage();
 		Thread.sleep(10000);
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(10000);
+		
+	
+		
+		 
 	}
 	
 	@Test(priority = 3)
@@ -46,10 +58,12 @@ public class EditUserTest extends TestBases {
 	}
 	
 	@Test(priority = 4)
-	public void EditUser(String name, String email, String phone) throws InterruptedException {
+	public void EditUser(String name, String email, String phone, String Validationmsg) throws InterruptedException {
 		EditUserpage eup = new EditUserpage(driver);
 		eup.EditUserPage(name, email, phone);
 		Thread.sleep(10000);
+		
+		//assertEquals(eup.getmsg(), Validationmsg);
 		driver.navigate().to("https://asmak.dashboard-omniful-stage.ibtikar.sa/users/edit-user/34");
 	}
 }

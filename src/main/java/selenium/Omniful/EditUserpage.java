@@ -20,6 +20,9 @@ public class EditUserpage extends PageBases{
 	@FindBy(xpath = "//*[@id=\"phone\"]")
 	WebElement phonenum;
 	
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[2]/div/button[1]")
+	WebElement Savebtn;
+	
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div")
 	WebElement cnfmsg;
 	
@@ -27,6 +30,7 @@ public class EditUserpage extends PageBases{
 		nametxt.sendKeys(name);
 		emailtxt.sendKeys(email);
 		phonenum.sendKeys(phone);
+		Savebtn.click();
 	}
 	public void getmsg() {
 		cnfmsg.getText();

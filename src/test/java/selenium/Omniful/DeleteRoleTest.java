@@ -7,7 +7,7 @@ public class DeleteRoleTest extends TestBases{
 
 	@BeforeTest
 	public void Openbrowser() throws InterruptedException {
-		OpenChrome("https://demo3.dashboard-omniful-stage.ibtikar.sa/pages/login");
+		OpenChrome("https://asmak.dashboard-omniful-stage.ibtikar.sa/");
 		driver.manage().window().maximize();
 		Thread.sleep(10000);
 		}
@@ -16,7 +16,7 @@ public class DeleteRoleTest extends TestBases{
 	@Test(priority=1)
 	public void LoginCLient() throws InterruptedException {
 		ClientLoginPage clp = new ClientLoginPage(driver);
-		clp.clientLoginMethod("hadeera00.1@gmail.com", "123456");
+		clp.clientLoginMethod("asmaa0abdelkerim@gmail.com", "123456");
 		Thread.sleep(10000);
 	}
 	@Test(priority = 2)
@@ -34,18 +34,25 @@ public class DeleteRoleTest extends TestBases{
 	@Test(priority = 4)
 	public void AddRole() throws InterruptedException {
 		CreateRolePage crp = new CreateRolePage(driver);
-		crp.AddRoleMethod("role1234");
+		crp.AddRoleMethod("role12345");
 		Thread.sleep(10000);
 	}
 	@Test(priority = 5)
-	public void Deletebtn() {
+	public void Deletebtn() throws InterruptedException {
 		RolePage rp = new RolePage(driver);
 		rp.DeleteRole1();
+		Thread.sleep(10000);
 	}
 	
 	@Test(priority = 6)
-	public void DeleteRole() {
+	public void DeleteRole() throws InterruptedException {
 		DeleteRolePage drp = new DeleteRolePage(driver);
 				drp.YesDeleteRoleMethod();
+				Thread.sleep(10000);
+	}
+	@Test(priority = 7)
+	public void GetCnfMsg() {
+		RolePage rp = new RolePage(driver);
+		rp.GetDeleteConfirmationMsg();
 	}
 }

@@ -11,7 +11,7 @@ public class UserPage extends PageBases{
 		// TODO Auto-generated constructor stub
 	}
  
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[1]/div/button")
+	@FindBy(xpath = "//button[contains(@class,'add-new-btn btn')]")
 	WebElement AddBtn;
 	
 	@FindBy(xpath = "//*[@id=\"cell-yY3Zkvhu9Y-2\"]/div/span[1]/svg")

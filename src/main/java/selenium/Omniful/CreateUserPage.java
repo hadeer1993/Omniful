@@ -11,31 +11,31 @@ public class CreateUserPage extends PageBases {
 		// TODO Auto-generated constructor stub
 	}
 
-	@FindBy(xpath = "//*[@id=\"name\"]")
+	@FindBy(id = "name")
 	WebElement Nametxt;
 	
-	@FindBy(xpath = "//*[@id=\"email\"]")
+	@FindBy(id = "email")
 	WebElement Emailtxt;
 	
-	@FindBy(xpath = "//*[@id=\"phone\"]")
+	@FindBy(id = "phone")
 	WebElement PhoneNum;
 	
-	@FindBy(xpath = "//*[@id=\"roles\"]/div[1]/div[2]/div/svg")
+	@FindBy(id = "roles")
 	WebElement RoleDDL;
 	
-	@FindBy(xpath = "//*[@id=\"roles\"]/div[1]/div[2]/div[2]/svg")
-	WebElement SelectRole;
+	@FindBy(xpath = "//div[@class=' css-1hwfws3']")
+	WebElement RoleTxt;
 	
-	@FindBy(xpath = "//*[@id=\"hubs\"]/div[1]/div[2]/div/svg")
+	@FindBy(id = "hubs")
 	WebElement HubDDL;
 	
-	@FindBy(xpath = "//*[@id=\"hubs\"]/div[1]/div[2]/div[2]")
-	WebElement SelectHub;
+	@FindBy(xpath = "(//div[@class=' css-1hwfws3'])[2]")
+	WebElement HubTxt;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[2]/div/button[1]")
+	@FindBy(xpath = "//button[contains(@class,'mt-2 mr-1')]")
 	WebElement CreateBtn;
 	
-	@FindBy(xpath = "/div/div[1]")
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div")
 	WebElement Cnfmessg;
 	
 
@@ -43,10 +43,17 @@ public class CreateUserPage extends PageBases {
 		Nametxt.sendKeys(name);
 		Emailtxt.sendKeys(email);
 		PhoneNum.sendKeys(pn);
+		
+	}
+	public void SelectRoleDDL() {
 		RoleDDL.click();
-		SelectRole.click();
+		//RoleTxt.sendKeys("Manager");
+	}
+	public void SelectHubDDL() {
 		HubDDL.click();
-		SelectHub.click();
+		//HubTxt.sendKeys("Demo");
+	}
+	public void CreateUser() {
 		CreateBtn.click();
 	}
 	public String getMessage()

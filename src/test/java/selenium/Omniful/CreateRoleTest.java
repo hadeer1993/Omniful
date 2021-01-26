@@ -36,4 +36,9 @@ public class CreateRoleTest extends TestBases {
 		Thread.sleep(10000);
 	}
 
+	@Test(priority = 5)
+	public void GetCnfMsg() {
+		RolePage rp = new RolePage(driver);
+		rp.GetCreateCnfMsg();
+	}
 }
