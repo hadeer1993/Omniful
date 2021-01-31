@@ -47,11 +47,11 @@ public class CreateUserPage extends PageBases {
 	}
 	public void SelectRoleDDL() {
 		RoleDDL.click();
-		//RoleTxt.sendKeys("Manager");
+		//RoleTxt.sendKeys(role);
 	}
 	public void SelectHubDDL() {
 		HubDDL.click();
-		//HubTxt.sendKeys("Demo");
+		//HubTxt.sendKeys(demo);
 	}
 	public void CreateUser() {
 		CreateBtn.click();

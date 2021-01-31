@@ -25,8 +25,11 @@ public class NewClientPage extends PageBases {
 		@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[2]/div/div/div[2]/button")
 		WebElement Savebtn;
 		
-		@FindBy(xpath="//*[@id=\"root\"]/div/div[2]/div")
-		WebElement Cnfmessg;	
+		@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[1]/div[1]/div/div[3]/div")
+		WebElement DomainValidation;	
+		
+		@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[2]/div/div/div[1]/button")
+		WebElement Cancelbtn;
 	
 		public void CreateClientMethod(String wsn,String ee, String cn, String pn) {
 			WorkspaceName.sendKeys(wsn);
@@ -35,9 +38,12 @@ public class NewClientPage extends PageBases {
 			PhoneNumber.sendKeys(pn);
 			Savebtn.click();
 		}
+		public void cancelMethod() {
+			Cancelbtn.click();
+		}
 		public String getMessage()
 		{
-		return Cnfmessg.getText();
+		return DomainValidation.getText();
 		}
 		
 

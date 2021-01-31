@@ -22,6 +22,7 @@ public class ImportLocationQuantityPage extends PageBases {
 
 	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div/div/div[1]/form/div[1]/div[2]/div/button")
 	WebElement Uploadbtn;
+
 	
 	
 	public void SelectFromHubList() {
@@ -29,8 +30,9 @@ public class ImportLocationQuantityPage extends PageBases {
 	   
 	}
 	
-	public void SendValue() {
-		 HubDDL.sendKeys("55");
+	public void SendValue(String miami) {
+		HubDDL.sendKeys(miami);
+		
 	}
 	
 	public void UploadFile() {

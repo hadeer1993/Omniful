@@ -48,7 +48,7 @@ public class CreateUserTest extends TestBases{
 		Thread.sleep(20000);
 	}
 	@Test(priority=4,  dataProvider="dataSheet2")
-	public void AddNewUser(String name, String email, String pn, String Validationmsg) throws InterruptedException {
+	public void NewUser(String name, String email, String pn, String Validationmsg) throws InterruptedException {
 	    CreateUserPage Cup = new CreateUserPage(driver);
 	    Cup.CreateNewUser(name,email,pn);
 	    Thread.sleep(1000);

@@ -25,7 +25,7 @@ public class ImportLocationQuantityTest extends TestBases {
 	    imp.SelectFromHubList();
 		Thread.sleep(1000);
 		
-		imp.SendValue();
+		imp.SendValue("miami");
 		Thread.sleep(1000);
 		
 	     ClickEnterAction();
