@@ -50,6 +50,9 @@ public class ClientHomePage extends PageBases {
 	
 	@FindBy(xpath = "//a[@href='/inventory/move-inventory']")
 	WebElement Moving;
+	
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[7]/ul/li[5]/a")
+	WebElement AddQty;
 
 	public void OpenRolesPage() {
 		Roles.click();
@@ -87,5 +90,10 @@ public class ClientHomePage extends PageBases {
 	public void OpenMovePage() {
 		Inventory.click();
 		Moving.click();
+	}
+	
+	public void OpenAddQuantityPage() {
+		Inventory.click();
+		AddQty.click();
 	}
 }

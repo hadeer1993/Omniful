@@ -3,7 +3,7 @@ package selenium.Omniful;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class MoveTest extends TestBases{
+public class AddQuantityTest extends TestBases {
 
 	@BeforeTest
 	public void openbrowser() throws InterruptedException{
@@ -22,38 +22,34 @@ public class MoveTest extends TestBases{
 	@Test(priority = 2)
 	public void OpenMovePage() throws InterruptedException {
 		ClientHomePage chp = new ClientHomePage(driver);
-		chp.OpenMovePage();
+		chp.OpenAddQuantityPage();
 		Thread.sleep(10000);
-	
 	}
 	
 	@Test(priority = 3)
-	public void MoveItem() throws InterruptedException {
-		MovePage mp = new MovePage(driver);
-		mp.SelectHub();
+	public void AddQuantity() throws InterruptedException {
+		AddQuantityPage aqp = new AddQuantityPage(driver);
+		aqp.SelectHub();
 		Thread.sleep(1000);
-		mp.SearchHub("demo");
+		aqp.SearchHub("Salams");
 		Thread.sleep(1000);
 		ClickEnterAction();
 		
-		mp.SelectSKU();
+		aqp.SelectLocation();
 		Thread.sleep(1000);
-		mp.SearchSKU("24-mb01");
+		aqp.SearchLocation("picking");
+		Thread.sleep(1000);
+		ClickEnterAction();
+		
+		aqp.SelectSKU();
+		Thread.sleep(1000);
+		aqp.SearchSKU("WJ08-M-Orange");
 		Thread.sleep(5000);
 		ClickEnterAction();
 		
-		mp.InsertQty("5");
-		mp.SelectSourceLocation();
-		mp.SearchSource("P-1");
+		aqp.InsertQty("100");
+		aqp.InsertReason("automation");
 		Thread.sleep(1000);
-		ClickEnterAction();
-		
-		mp.SelectDestinationLocation();
-		mp.SearchDestination("B-1");
-		Thread.sleep(1000);
-		ClickEnterAction();
-		mp.InsertReason("Test");
-		mp.ClickSaveBtn();
-		//mp.getMessage();
+		aqp.ClickSaveBtn();
 	}
 }
