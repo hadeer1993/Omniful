@@ -1,5 +1,6 @@
 package selenium.Omniful;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -21,6 +22,22 @@ public class WebsiteCategoriesTest extends TestBases {
 		web.AddToCart();
 		Thread.sleep(5000);
 		web.ShoppingCart();
+		Thread.sleep(5000);
+		
+		WebSiteProceedToCheckPage webproceed=new WebSiteProceedToCheckPage(driver);
+		webproceed.ClickProceed();
+		
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(5000);
+		
+		WebSiteShippingPage next=new WebSiteShippingPage(driver);
+		next.NextMethod();
+		Thread.sleep(5000);
+		
+		WebSitePaymentPage payment=new WebSitePaymentPage(driver);
+		payment.PlaceMethod();
+
 	}
 
 }

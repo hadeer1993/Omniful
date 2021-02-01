@@ -1,5 +1,7 @@
 package selenium.Omniful;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,5 +30,10 @@ public class UserPage extends PageBases{
 	}
 	public void DeleteUser() {
 		DeleteBtn.click();
+	}
+	public void Scrollbar() {
+		WebElement problematicElement= driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/div/div[1]"));
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].scrollIntoView()", problematicElement);
 	}
 }

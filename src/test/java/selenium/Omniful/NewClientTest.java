@@ -50,9 +50,7 @@ public class NewClientTest extends TestBases {
 		NewClientPage ncp=new NewClientPage(driver);
 		ncp.CreateClientMethod(wsn,ee,cn,pn);
 		Thread.sleep(10000);
-		
-		assertTrue(equals(ncp.getMessage().contains(Validationmsg)));
-		//Thread.sleep(50000);
+		assertEquals(true,(ncp.getMessage().contains(Validationmsg)));
 		//System.out.println(ncp.getMessage());
 		driver.navigate().to("https://admin-stage-omniful.ibtikar.sa/clients/create-client");
 		Thread.sleep(5000);

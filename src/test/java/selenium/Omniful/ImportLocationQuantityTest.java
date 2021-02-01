@@ -22,14 +22,11 @@ public class ImportLocationQuantityTest extends TestBases {
 	     @Test(priority=2)   
 	    public void ImportMethod() throws InterruptedException {
 	   ImportLocationQuantityPage imp=new ImportLocationQuantityPage(driver);
-	    imp.SelectFromHubList();
-		Thread.sleep(1000);
+	     imp.SelectFromHubList();
+	      Thread.sleep(5000);
 		
-		imp.SendValue("miami");
-		Thread.sleep(1000);
-		
-	     ClickEnterAction();
-	     Thread.sleep(1000);
+		ClickEnterAction();
+	    Thread.sleep(5000);
 	     
 	     imp.UploadFile();
 		Thread.sleep(1000);

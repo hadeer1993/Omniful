@@ -1,5 +1,6 @@
 package selenium.Omniful;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -32,8 +33,19 @@ public class CreateRoleTest extends TestBases {
 	@Test(priority = 4)
 	public void AddRole() throws InterruptedException {
 		CreateRolePage crp = new CreateRolePage(driver);
-		crp.AddRoleMethod("role1234");
-		Thread.sleep(10000);
+		crp.EnterRoleName("role1234");
+		Thread.sleep(1000);
+		
+		crp.SelecrRolePermission();
+		Thread.sleep(1000);
+		
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(5000);
+		
+		crp.CreateRole();
+		Thread.sleep(1000);
+
 	}
 
 	@Test(priority = 5)

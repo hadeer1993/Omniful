@@ -13,29 +13,24 @@ public class SetupMagentoTest extends TestBases {
 	}
 	@BeforeTest
 	public void openbrowser() {
-		OpenChrome("https://autypmationnnn.dashboard-omniful-stage.ibtikar.sa/");
+		OpenChrome("https://asmak.dashboard-omniful-stage.ibtikar.sa/");
 	}
 	@Test(priority=1)
     public void LoginAsClientt() throws InterruptedException{
 		ClientLoginPage clp=new ClientLoginPage(driver);
-		clp.clientLoginMethod ("h.a.dee.ra.001@gmail.com", "123456");
-	driver.manage().window().maximize();
-	Thread.sleep(10000);
+		clp.clientLoginMethod ("asmaa0abdelkerim@gmail.com", "123456");
+	    driver.manage().window().maximize();
+	    Thread.sleep(10000);
 }
     @Test(priority=2)
     public void OpenSideMenu() throws InterruptedException{
     	ClientHomePage chp=new ClientHomePage(driver);
 		chp.OpenEcomPage();
 		Thread.sleep(10000);
+		EcoomerceListPage eco=new EcoomerceListPage(driver);
+		eco.SetupMagento();
 }
-    @Test(priority=3)
-	public void OpenEco() throws InterruptedException {
-		ClientHomePage chp=new ClientHomePage(driver);
-		chp.OpenEcomPage();
-		driver.manage().window().maximize();
-		Thread.sleep(10000);
-    }   
-    @Test(priority=4, dataProvider="dataSheet1")
+    @Test(priority=3, dataProvider="dataSheet1")
 	public void Integrate(String shop,String user, String pass) throws InterruptedException {
 		SetupMagentoPage sm=new SetupMagentoPage(driver);
 		sm.MagentoMethod(shop,user,pass);

@@ -38,6 +38,9 @@ public class CreateUserPage extends PageBases {
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div")
 	WebElement Cnfmessg;
 	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/form/div[1]/div[1]/div/div")
+	WebElement NameValidation;
+	
 
 	public void CreateNewUser(String name, String email, String pn) {
 		Nametxt.sendKeys(name);
@@ -47,17 +50,17 @@ public class CreateUserPage extends PageBases {
 	}
 	public void SelectRoleDDL() {
 		RoleDDL.click();
-		//RoleTxt.sendKeys(role);
+		
 	}
 	public void SelectHubDDL() {
 		HubDDL.click();
-		//HubTxt.sendKeys(demo);
+		
 	}
 	public void CreateUser() {
 		CreateBtn.click();
 	}
 	public String getMessage()
 	{
-	return Cnfmessg.getText();
+	return NameValidation.getText();
 	}
 }

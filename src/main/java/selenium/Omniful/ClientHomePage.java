@@ -21,10 +21,10 @@ public class ClientHomePage extends PageBases {
 	@FindBy(xpath="//*[@id=\"navbar-mobile\"]/ul/li[2]/div/a[3]")
 	WebElement ChangeTimeZone;
 	
-	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[5]/a/div[1]")
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[4]/a/div[1]")
 	WebElement Settings;
 	
-	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[5]/ul/li[1]/a/div")
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[4]/ul/li[1]/a/div")
 	WebElement Ecommerce;
 	
 	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[5]/ul/li[2]/a/div")

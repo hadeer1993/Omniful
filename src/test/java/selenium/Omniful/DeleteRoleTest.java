@@ -30,12 +30,7 @@ public class DeleteRoleTest extends TestBases{
 		RolePage rp = new RolePage(driver);
 		rp.AddRole();
 		Thread.sleep(10000);
-	}
-	@Test(priority = 4)
-	public void AddRole() throws InterruptedException {
-		CreateRolePage crp = new CreateRolePage(driver);
-		crp.AddRoleMethod("role12345");
-		Thread.sleep(10000);
+	
 	}
 	@Test(priority = 5)
 	public void Deletebtn() throws InterruptedException {

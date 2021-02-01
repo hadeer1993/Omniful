@@ -21,14 +21,18 @@ public class CreateRolePage extends PageBases {
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/form/div[3]/div/div[2]/div/div/div[1]")
 	WebElement RoleCB;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/form/button[1]")
+	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/form/div[19]/button[1]")
 	WebElement Createbtn;
 	
 	
-	public void AddRoleMethod(String rn)  {
+	public void EnterRoleName(String rn)  {
 		RoleTXT.sendKeys(rn);
+	}
+	public void SelecrRolePermission() {
 		RoleDDL.click();
 		RoleCB.click();
+	}
+	public void CreateRole() {
 		Createbtn.click();
 	}
 	

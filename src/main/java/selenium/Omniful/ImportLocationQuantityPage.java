@@ -19,7 +19,7 @@ public class ImportLocationQuantityPage extends PageBases {
 	
 	@FindBy(id="hub")
 	WebElement HubDDL;
-
+	
 	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div/div/div[1]/form/div[1]/div[2]/div/button")
 	WebElement Uploadbtn;
 

@@ -43,9 +43,9 @@ public class EditUserTest extends TestBases {
 		Thread.sleep(10000);
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		Thread.sleep(5000); 
-		WebElement problematicElement= driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div[3]/div[3]/div[2]/div[2]/div/div[1]"));
-		js.executeScript("arguments[0].scrollIntoView()", problematicElement);
+		Thread.sleep(10000);
+		js.executeScript("window.scrollBy(2000,0)");
+		
 	}
 	
 	@Test(priority = 3)
