@@ -58,6 +58,13 @@ public class ClientHomeTest extends TestBases {
 		chp.OpenImporting();
 		Thread.sleep(10000);
 		}
+	
+	@Test(priority=8)
+	public void OpenShippingScreen() throws InterruptedException {
+		ClientHomePage chp=new ClientHomePage(driver);
+		chp.OpenShipping();
+		Thread.sleep(10000);
+	}
 
 
 }

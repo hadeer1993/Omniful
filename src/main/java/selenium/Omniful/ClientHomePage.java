@@ -53,6 +53,9 @@ public class ClientHomePage extends PageBases {
 	
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[7]/ul/li[5]/a")
 	WebElement AddQty;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/div[1]/div[2]/div[2]/ul/li[4]/ul/li[2]/a/div")
+	WebElement Shipping;
 
 	public void OpenRolesPage() {
 		Roles.click();
@@ -95,5 +98,11 @@ public class ClientHomePage extends PageBases {
 	public void OpenAddQuantityPage() {
 		Inventory.click();
 		AddQty.click();
+	}
+	
+	public void OpenShipping() {
+		Settings.click();
+		Shipping.click();
+		
 	}
 }

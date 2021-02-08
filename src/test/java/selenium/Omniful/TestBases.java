@@ -23,6 +23,13 @@ public class TestBases {
 			
 			
 		}
+		public void ClickEscapeAction() {
+			Actions action=new Actions(driver);
+			action.sendKeys(Keys.ESCAPE);
+			action.perform();
+			
+			
+		}
 	}
 
 

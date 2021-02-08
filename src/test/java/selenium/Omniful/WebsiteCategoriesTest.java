@@ -26,6 +26,7 @@ public class WebsiteCategoriesTest extends TestBases {
 		
 		WebSiteProceedToCheckPage webproceed=new WebSiteProceedToCheckPage(driver);
 		webproceed.ClickProceed();
+		Thread.sleep(5000);
 		
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
