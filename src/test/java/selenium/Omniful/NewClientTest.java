@@ -24,7 +24,7 @@ public class NewClientTest extends TestBases {
 	
 	@BeforeTest
 	public void openbrowser(){
-		OpenChrome("https://admin-stage-omniful.ibtikar.sa/");
+		OpenChrome("https://admin-demo-omniful.ibtikar.sa/");
 	}
 	@Test(priority=1)
     public void LoginAsSuperAdmin() throws InterruptedException{

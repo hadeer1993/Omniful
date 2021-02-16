@@ -51,6 +51,10 @@ public class NewClientPage extends PageBases {
 		{
 		return DomainValidation.getText();
 		}
-		
+		public void Edit(String companyname,String Phone ) {
+			CompanyName.sendKeys(companyname);
+			PhoneNumber.sendKeys(Phone);
+			Savebtn.click();
+		}
 
 }
