@@ -1,10 +1,7 @@
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+package selenium.Omniful;
 
-import selenium.Omniful.HomePage;
-import selenium.Omniful.NewClientPage;
-import selenium.Omniful.SuperAdminLoginPage;
-import selenium.Omniful.TestBases;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
 
 public class EditClientTest extends TestBases {
 	@BeforeTest
